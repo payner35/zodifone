@@ -1,0 +1,92 @@
+@import nib
+
+
+
+
+.productItem
+	user-select: none
+	margin-top 15px
+	$itemHeight = 136px
+
+	.uk-panel
+		height $itemHeight
+		box-shadow: 1px 1px 3px 0px #CBCBCB
+		border-radius: 5px 5px 0px 0px
+		//border-top 3px solid #d3d3d3
+		background-color white
+		&.vip
+			background-color yellow
+
+		h2
+			width 36%
+			margin-top 25px
+			font-family VodafoneLt
+
+		.product-image-frame
+			width 80px
+			right 15px
+
+			.product-image-wrapper
+				position relative
+				height 118px
+				overflow hidden
+
+				.product-image
+					transition: all 0.3s
+					position absolute
+					top 22px
+
+		.uk-badge-danger
+			position absolute
+			top 0px
+			left 10px
+			width 50px
+			padding 3px 5px
+
+
+		&:hover
+			cursor: pointer
+			box-shadow: 1px 1px 13px 0px #CBCBCB
+			//box-shadow: 2px 5px 15px -6px rgba(0,0,0,0.43)
+			.product-image
+				margin-top -15px
+
+
+		.product-compare-box
+			position absolute
+			height 33px
+			width 100%
+			border-top 1px solid #cccccc
+			bottom 0px
+			right 0px
+			h4
+				font-family arial, helvetica, sans-serif
+				font-size 85%
+				padding-left 10px
+				margin-top 4px
+				margin-bottom 4px
+
+			.uk-badge
+				background-color #d3d3d3
+				top 0px
+				right 2px
+				margin 3px
+				i
+					margin 4px
+
+			&.compare-active
+				background-color #8fbdc5
+				h4
+					color white
+				.uk-badge
+					background-color #8fbdc5
+
+
+
+
+
+
+
+
+
+

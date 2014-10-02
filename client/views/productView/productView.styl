@@ -1,0 +1,195 @@
+@import nib
+@import '../../../globals.styl'
+
+
+#product-rhomus
+	right 0px
+	width 25%
+	opacity: 0.8
+	top 120px
+	@media screen and (max-width: 660px)
+		width 35%
+		top: 60px
+
+
+.uk-article-title
+	color red
+
+.uk-active > #product-topBar
+	box-shadow: 0px 7px 34px -5px rgba(0,0,0,0.35)
+	left 0px !important
+	visibility visible
+	height 50px
+
+
+#product-topBar
+	visibility hidden
+	height 0px
+	background-color vfiVeryDarkGrey
+	z-index 200
+	.uk-grid
+		padding-top 7px
+		padding-left 10px
+		padding-right 12px
+	p
+		color #c1c2c3
+		padding-top 8px
+
+	h3
+		color #c1c2c3
+		padding-top 7px
+
+	#btn_product-backToDevices
+		cursor: pointer
+
+
+
+#product-details
+	styleColorButton(modelColor)
+		color modelColor
+
+	.model-blue
+		styleColorButton(#60b7f4)
+
+	.model-silver
+		styleColorButton(#c0c0c0)
+
+	.model-gold
+		styleColorButton(darkgoldenrod)
+
+	#product-selectplan
+		button
+			font-family VodafoneLt
+			font-size 100%
+			width 30%
+			line-height 20px
+
+
+#product-videoCover
+	cursor pointer
+
+
+#productQuote
+	background-color #5e2750
+	h2
+		padding-top 40px
+		padding-left 20%
+		padding-right 20%
+		font-size 200%
+		color white
+		span
+			color #3e1734
+
+	p
+		padding-bottom 40px
+		color white
+
+#productCarouselWrapper
+	#productCarousel
+		margin-bottom 0px
+		touch-action: auto!important
+		.product-carousel-item
+			margin-bottom 0px
+
+	#productCarouselCurtain
+		background-color #ffff00
+		opacity 0
+		height 100%
+		width 100%
+		top 0px
+
+.product-feature
+	padding-left 0px !important
+	.product-feature-text
+		padding 20px 20px
+		hr
+			width 90%
+			top 0px
+			margin 0px 20px
+		p, h2
+			padding 0px 20px
+			margin-bottom 20px
+
+
+
+#product-review
+	box-shadow: inset 0px 9px 26px -5px rgba(0,0,0,0.35)
+	margin-left 0px
+
+	background-color #007c92
+	h3,p
+		color white
+	h3
+		padding-right 10px
+		height 30px
+
+	.vfi-bold
+		margin-right 3px
+
+	.uk-icon-star
+		color white
+
+	.uk-panel
+		padding 30px 20px
+		.uk-progress
+			margin-top 9px
+		.uk-grid
+			margin-top 2px
+
+	hr
+		width 95%
+
+		border-color #076a7c
+
+	#product-reviewActions
+		margin 0px 20px
+		button
+			margin 20px 10px 20px 0px
+
+
+#product-inTheBox
+	background-color #ededed
+	margin 0px
+	padding 30px 20px
+	#product-inTheBoxText
+		padding 20px 60px
+
+
+#product-specifications
+	background-color #f5f5f5
+	padding-top 40px
+	h2
+		font-size 230%
+	.resp-tabs-container
+		h2
+			font-size 150% !important
+	.resp-arrow
+		margin-top 8px
+	pre
+		background-color white
+
+
+
+#product-buyOnline
+	blockMe(#e8e8e8)
+
+
+#product-comparePhone
+	blockMe(#f5f5f5)
+	p
+		width 60%
+		padding-left 10px
+
+	@media screen and (max-width: 660px)
+		img
+			float none
+
+
+
+
+[data-uk-switcher]
+	.vfi-button-toggle
+		padding  8px 5px !important
+		font-family VodafoneLt
+		line-height 19px
+		width 110px

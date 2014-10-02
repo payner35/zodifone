@@ -1,0 +1,108 @@
+/*
+
+
+*/
+
+@import 'nib'
+
+
+
+
+@font-face
+	font-family VodafoneLt
+	font-style normal
+	src url(fonts/VodafoneLt.ttf)
+
+@font-face
+	font-family VodafoneRg_Bd
+	font-style normal
+	src url(fonts/VodafoneRg_Bd.ttf)
+
+
+h1
+	font-family VodafoneLt
+
+h2
+	font-family VodafoneLt
+	font-size 230%
+
+h3,h4
+	font-family VodafoneLt
+
+p, pre
+	font-family VodafoneLt
+	font-size 110%
+
+
+ul
+	padding-left  0px
+	li
+		font-family VodafoneLt
+		font-size 110%
+		list-style-type: none
+
+
+.vfi-bold
+	font-family VodafoneRg_Bd
+
+body
+	margin-right 0px
+	margin-left 0px
+	background-color #f5f5f5
+
+
+
+.uk-button.vfi-round
+	border-radius: 19px 19px 19px 19px
+	padding 1px 22px
+
+
+vfiButtonStyle(bg, border, textColor)
+	background-color bg
+	border: 1px solid border
+	color textColor
+
+
+.vfi-button-green
+	vfiButtonStyle(#a8b400, #000000, #ffffff)
+	font-family VodafoneRg_Bd
+
+.vfi-button-black
+	vfiButtonStyle(#013640, #000000, white)
+	font-family VodafoneRg_Bd
+
+.vfi-button-blue
+	vfiButtonStyle(#007c92, #000000, white)
+	font-family VodafoneRg_Bd
+
+.vfi-button-filter
+	vfiButtonStyle(#222222, #666666, #d9d9d9)
+	font-family VodafoneRg_Bd
+	margin 5px
+	&:hover
+		background-color #007c92
+		color white
+
+.vfi-callAction
+	vfiButtonStyle(#5e274f, #000000, white)
+
+.vfi-button-toggle
+	vfiButtonStyle(white, lightgrey, black)
+	margin 0px 7px 10px 0
+	&.uk-active
+		border: 3px solid lightgreen
+		background-color white
+
+
+
+.border-top
+	border-top 3px solid #d3d3d3
+
+.vfi-red
+	color #ff0000
+
+a
+	color #ff0000
+
+.uk-modal
+	background rgba(0, 0, 0, 0.86)

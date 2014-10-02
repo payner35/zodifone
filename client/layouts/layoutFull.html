@@ -1,0 +1,47 @@
+<template name="layoutFull">
+    <div class="uk-margin-remove"> <!--this is required for mmenu plugin...;) -->
+
+    {{> yield region="topNav"}}
+    <section id="main">
+        {{> yield}}
+    </section>
+
+    <div id="leftNav" class="uk-offcanvas">
+       {{> yield region="leftNav"}}
+    </div>
+    <div id="rightNav" class="uk-offcanvas">
+        {{> yield region="rightNav"}}
+    </div>
+
+
+<!-- Models need to be one main body to work -->
+    <!-- This is the video modal -->
+    <div id="modelVideo" class="uk-modal">
+        <div class="uk-modal-dialog uk-modal-dialog-frameless">
+            <a href="" class="uk-modal-close uk-close uk-close-alt"></a>
+            <div id="vidContainer">
+                <iframe width="600" height="400" src="{{getProductVideo}}" frameborder="10" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- This is the login modal -->
+    <div id="modelLogin" class="uk-modal">
+        <div class="uk-modal-dialog uk-modal-dialog-frameless">
+            <a href="" class="uk-modal-close uk-close uk-close-alt"></a>
+            {{>loginPanel}}
+        </div>
+    </div>
+
+
+
+    {{> yield region="modal"}}
+
+    </div>
+
+</template>
+
+
+

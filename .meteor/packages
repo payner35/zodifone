@@ -1,0 +1,27 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages
+insecure
+jquery
+underscore
+coffeescript
+uikit-full
+stylus
+mrt:animate-enhanced
+louis:slick
+iron:router
+mrt:fitvids
+accounts-password
+sacha:spin
+konecty:meteor-seo
+spiderable
+dfischer:phantomjs
+reactive-var
+digilord:roles
+d3
+mmenu
+random
+

@@ -1,0 +1,307 @@
+<template name="productView">
+
+{{> contentFor region="rightNav" template="deviceHelp"}}
+{{> contentFor region="leftNav" template="leftNav"}}
+
+
+
+{{#with item}}
+<div class="uk-width-1-1 uk-hidden-small">
+    {{>helpBar}}
+</div>
+
+
+<div class="uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-margin>
+        <h1 class="uk-width-1-1 uk-margin-top">{{title}}</h1>
+
+        <div class="uk-width-medium-1-2 uk-push-1-2 uk-margin-large-top">
+            <div class="uk-panel">
+                <div id="product-carousel" class="">
+                    {{>productCarousel}}
+                </div>
+            </div>
+        </div>
+        <div class="uk-pull-1-2 uk-width-medium-1-2">
+            <div class="uk-panel">
+                <div id="product-about">
+                    <article class="uk-article">
+                        <p class="uk-article-meta">Android</p>
+                        <p class="uk-article-lead">{{lead}}</p>
+                    </article>
+                    <div id="product-details" class="uk-grid uk-margin-top">
+                        <div class="uk-width-medium-1-2 uk-margin-bottom">
+                            <h3>1. Choose a model</h3>
+                            <div data-uk-button-radio>
+                                <button class="uk-button vfi-round vfi-button-toggle uk-active">16 GB</button>
+                                <button class="uk-button vfi-round vfi-button-toggle">32 GB</button>
+                            </div>
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <h3>2. Choose a color</h3>
+                            <div data-uk-button-radio>
+                                <button class="uk-button vfi-round vfi-button-toggle uk-active"><i class="uk-icon-circle model-blue"></i></button>
+                                <button class="uk-button vfi-round vfi-button-toggle"><i class="uk-icon-circle model-gold"></i></button>
+                                <button class="uk-button vfi-round vfi-button-toggle"><i class="uk-icon-circle model-silver"></i></button>
+                            </div>
+                        </div>
+                        <div id="product-selectplan" class="uk-width-medium-1-1 uk-margin-top">
+                            <h3 class="uk-margin-top">3. Select type of plan</h3>
+                            <ul data-uk-switcher="{connect:'#my-id'}">
+                                <li class="uk-button vfi-round vfi-button-toggle">Starting {{billPayCost}} on new plan</li>
+                                <li class="uk-button vfi-round vfi-button-toggle">{{prePayCost}} on Pay as you go</li>
+                                <li class="uk-button vfi-round vfi-button-toggle">Check for upgrade</li>
+                                <li class="uk-active"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="product-rhomus" class="uk-position-absolute" src="https://s3-eu-west-1.amazonaws.com/vfitest/rhomus.png">
+
+    {{#with ../plans}}
+        {{>planSelect this}}
+    {{/with}}
+
+    <div id="product-topBar" class="uk-hidden-small" data-uk-sticky="{top:60, animation: 'uk-animation-slide-top', getWidthFrom: 'body'}">
+        <div class="uk-grid uk-width-1-1">
+            <div id="btn_product-backToDevices" class="uk-width-1-3">
+                <p class="uk-align-left">Explore other devices</p>
+            </div>
+            <div class="uk-width-1-3">
+                <h3 class="uk-text-center">{{title}}</h3>
+            </div>
+            <div class="uk-width-1-3">
+                <button class="uk-button vfi-round uk-align-right vfi-button-green">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="uk-margin">
+        <img id="product-videoCover" class="uk-width-1-1" src="{{videoCover}}">
+    </div>
+
+</div>
+
+<blockquote id="productQuote">
+    <h2 class="uk-text-center">
+            <span>
+                 <i class="uk-icon-quote-left uk-icon-medium align-left"></i>
+            </span>
+        {{quote}}
+    </h2>
+    <p class="uk-text-center">{{quoteSource}}</p>
+</blockquote>
+
+<div class="uk-grid uk-grid-small uk-margin-top" data-uk-grid-match>
+    {{#each features}}
+    <div class="product-feature uk-width-medium-1-2 uk-margin-bottom uk-margin-top uk-position-relative">
+        {{#if image}}
+        <img class="uk-width-1-1" src="{{image}}">
+        {{/if}}
+        <div class="product-feature-text">
+            <h2 class="uk-margin-top">{{title}}</h2>
+            <p class="">{{description}}</p>
+            <hr class="uk-position-absolute">
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<div id="product-review" class="uk-grid" data-uk-grid-match>
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel">
+            <h3 class="uk-panel-title">Overall rating</h3>
+            <div class="uk-margin-bottom">
+                <i class="uk-icon-star uk-icon-small"></i>
+                <i class="uk-icon-star uk-icon-small"></i>
+                <i class="uk-icon-star uk-icon-small"></i>
+                <i class="uk-icon-star uk-icon-small"></i>
+                <i class="uk-icon-star uk-icon-small"></i>
+            </div>
+            <div>
+                <h3 class="uk-text-bold uk-float-left">87%</h3>
+                <p>of customers recommended this product</p>
+            </div>
+        </div>
+    </div>
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel">
+            <h3 class="uk-panel-title">Average for categories</h3>
+
+            {{#each rating}}
+            <div class="uk-grid uk-width-1-1">
+                <div class="uk-width-medium-3-5">
+                    <p><span class="vfi-bold">{{score}}</span> {{title}}</p>
+                </div>
+                <div class="uk-width-medium-2-5">
+                    <div class="uk-progress uk-progress-mini">
+                        <div class="uk-progress-bar" style="width: {{percentage}}"></div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel">
+            <h3 class="uk-panel-title">Review breakdown (21)</h3>
+        </div>
+    </div>
+
+    <hr>
+    <div id="product-reviewActions" class="uk-button-group">
+        <button class="uk-button vfi-round vfi-button-black">READ ALL REVIEWS</button>
+    </div>
+</div>
+
+
+<div id="product-inTheBox" class="uk-grid">
+    <div class="uk-width-medium-1-2">
+        <img class="uk-margin-top" src="{{inTheBox}}" data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
+    </div>
+    <div id="product-inTheBoxText" class="uk-width-medium-1-2">
+        <h2>What's in the box</h2>
+        <ul>
+            {{#each inTheBoxItems}}
+            <li>{{title}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+<div id="product-specifications" class="uk-margin-large-left uk-margin-large-right uk-margin-top">
+    <div class="uk-panel">
+        <h2 class="uk-panel-title">Specifications</h2>
+        <hr>
+        <div id="demoTab">
+            <ul class="resp-tabs-list">
+                {{#each specs}}
+                <li>{{title}}</li>
+                {{/each}}
+            </ul>
+
+            <div class="resp-tabs-container">
+                {{#each specs}}
+                <div>
+                    <ul>
+                        {{#each details}}
+                        <li>{{detail}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="product-buyOnline" class="uk-margin-large-top">
+
+    <div class="blockMe">
+        <h2>Buy online today and enjoy</h2>
+        <div class="uk-grid" data-uk-grid-match>
+            <div class="uk-width-medium-1-4">
+                <div class="uk-panel uk-panel-box">
+                    <div class="uk-panel-teaser">
+                        <img class="uk-align-center uk-margin-top uk-margin-bottom" src="https://s3-eu-west-1.amazonaws.com/vfitest/product/iconReturns.png" alt="">
+                    </div>
+                    <h3 class="uk-text-bold uk-text-center">Returns policy</h3>
+                    <p class="uk-text-center">Our returns policy is simple and straight-forward. Get a full, no quibbles refund on unused phones within 14 days.</p>
+                </div>
+            </div>
+            <div class="uk-width-medium-1-4">
+
+                <div class="uk-panel uk-panel-box">
+                    <div class="uk-panel-teaser">
+                        <img class="uk-align-center uk-margin-top uk-margin-bottom" src="https://s3-eu-west-1.amazonaws.com/vfitest/product/iconNextDayDelivery.png" alt="">
+                    </div>
+                    <h3 class="uk-text-bold uk-text-center">Next day delivery</h3>
+                    <p class="uk-text-center">We aim to deliver within a day when you order before 1pm Monday to Thursday. Orders after 1pm will be delivered within 2 working days.</p>
+                </div>
+
+            </div>
+            <div class="uk-width-medium-1-4">
+
+                <div class="uk-panel uk-panel-box">
+                    <div class="uk-panel-teaser">
+                        <img class="uk-align-center uk-margin-top uk-margin-bottom" src="https://s3-eu-west-1.amazonaws.com/vfitest/product/iconTotallySecure.png" alt="">
+                    </div>
+                    <h3 class="uk-text-bold uk-text-center">Totally secure</h3>
+                    <p class="uk-text-center">Industry-standard SSL encryption technology so you can be sure your information is completely secure online.</p>
+                </div>
+
+            </div>
+            <div class="uk-width-medium-1-4">
+
+                <div class="uk-panel uk-panel-box">
+                    <div class="uk-panel-teaser">
+                        <img class="uk-align-center uk-margin-top uk-margin-bottom" src="https://s3-eu-west-1.amazonaws.com/vfitest/product/iconGetSupport.png" alt="">
+                    </div>
+                    <h3 class="uk-text-bold uk-text-center">Always open</h3>
+                    <p class="uk-text-center">No need to worry about opening hours or the weather - we're always open for business.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="product-comparePhone" class="">
+    <div class="blockMe">
+        <div class="uk-grid uk-margin-top" data-uk-grid-match>
+            <div class="uk-width-medium-1-2">
+                <div class="uk-panel uk-panel-box uk-vertical-align">
+                    <img class="uk-vertical-align-middle uk-float-left" src="https://s3-eu-west-1.amazonaws.com/vfitest/product/iconComparePhones.png" alt="">
+                    <p class="uk-vertical-align-middle">Compare this phone with other phones. <span><a>Select up to 2 other devices to compare</a></span></p>
+                </div>
+            </div>
+            <div class="uk-width-medium-1-2">
+                <div class="uk-panel uk-panel-box uk-vertical-align">
+                    <img class="uk-vertical-align-middle uk-float-left" src="https://s3-eu-west-1.amazonaws.com/vfitest/product/iconCompareVFPhones.png" alt="">
+                    <p class="uk-vertical-align-middle">Compare this phone with your existing Vodafone device. <span><a>Log into myVodafone</a></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{{/with}}
+
+<footer>
+    {{> footer}}
+</footer>
+
+
+
+</template>
+
+
+<template name="productCarousel">
+    <div class="uk-position-relative" id="productCarouselWrapper">
+        <div id="productCarousel">
+            <div class="product-carousel-item slick-slider">
+                <img src=" {{productImage1}}">
+            </div>
+            <div class="product-carousel-item slick-slider">
+                <img src=" {{productImage2}}">
+            </div>
+            <div class="product-carousel-item slick-slider">
+                <img src=" {{productImage3}}">
+            </div>
+        </div>
+        <div class="uk-position-absolute uk-visible-small" id="productCarouselCurtain">
+            <!--need to cover with a div to stop the slick.js horizontal scroll issue on mobile -->
+
+        </div>
+    </div>
+
+</template>

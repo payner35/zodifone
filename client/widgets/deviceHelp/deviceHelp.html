@@ -1,0 +1,49 @@
+<template name="deviceHelp">
+    <!-- This is the off-canvas sidebar -->
+    <div id="deviceHelp">
+        {{#with navhelp}}
+        <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+            <div class="uk-panel uk-panel-box uk-text-center uk-visible-small">
+                <input class="uk-width-1-1" type="text" placeholder="How Can I Help?">
+            </div>
+            <div class="uk-container uk-container-center">
+                <div class="uk-panel uk-text-center">
+                    <h2>{{brand}} {{title}}</h2>
+                </div>
+                <h3>Frequently asked questions</h3>
+                <ul>
+                    {{#each faqs}}
+                    <li><a class="uk-margin-small-bottom">{{title}}</a></li>
+                    {{/each}}
+                    <li><a class="uk-text-bold">See all {{../navhelp.brand}} {{../navhelp.title}} support</a></li>
+                </ul>
+                <hr>
+                <h3>Getting Started</h3>
+                <ul>
+                    {{#each started}}
+                    <li><a class="uk-margin-small-bottom">{{title}}</a></li>
+                    {{/each}}
+                    <li><a class="uk-text-bold">See the full {{../navhelp.brand}} {{../navhelp.title}} startup guide</a></li>
+                </ul>
+
+                <hr>
+                <h3>From the Community</h3>
+                <ul>
+                    {{#each community}}
+                    <article class="uk-comment">
+                        <header class="uk-comment-header">
+                            <img class="uk-comment-avatar" width="60" src="{{photo}}" alt="">
+                            <a><h4 class="uk-comment-title">{{title}}</h4></a>
+                        </header>
+                    </article>
+                    {{/each}}
+                    <li><a class="uk-text-bold">Visit the {{../navhelp.brand}} {{../navhelp.title}} community</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+        {{/with}}
+    </div>
+
+</template>

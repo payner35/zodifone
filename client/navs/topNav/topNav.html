@@ -1,0 +1,134 @@
+<template name="topNav">
+    <div id="topNav">
+        <nav id="topNavBar" class="uk-navbar uk-navbar-attached" data-uk-sticky>
+
+            <a href="#leftMenu" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+
+            <!--
+            <div class="uk-navbar-nav uk-visible-small">
+                <div id="gav">
+                    <span><img src="/img/iconHelp.png"></span> Help
+                </div>
+            </div>
+            -->
+
+            <div class="uk-navbar-flip uk-visible-small" data-uk-offcanvas="{target:'#rightNav'}">
+                <div id="icon-vfiHelp">
+                    <span><img src="/img/iconHelp.png"></span> Help
+                </div>
+            </div>
+
+            <ul id="vfi-mainNav" class="uk-navbar-nav uk-hidden-small">
+                <li><a href="{{pathFor 'home'}}"><i class="uk-icon-home uk-icon-medium"></i> </a></li>
+
+                {{#with nav}}
+                    {{#each primary}}
+                        {{> primaryNavItem this}}
+                    {{/each}}
+                {{/with}}
+
+
+            </ul>
+
+            <div class="uk-navbar-flip uk-hidden-small">
+                <ul class="uk-navbar-nav">
+
+                    {{#if currentUser}}
+                    {{> vfiNavMyVodafone}}
+                    <li><img width="60" src="{{userPic}}"></li>
+                    {{else}}
+                    <li><a class="vfi-nav-primary" href="#modelLogin" data-uk-modal>MY VODAFONE</a></li>
+                    {{/if}}
+                    <!--
+                    <a href="" class="uk-icon-button uk-icon-shopping-cart"></a>
+                    -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</template>
+
+<template name="primaryNavItem">
+    <li class="uk-parent vfi-nav-parent" data-uk-dropdown="{justify:'body', remaintime: 200}">
+        <a class="vfi-nav-primary">{{title}}</a>
+        {{#if secondary}}
+        <div class="vfi-mega-menu uk-dropdown">
+            <div class="uk-grid">
+                <div class="uk-width-1-4">
+                    <ul class="uk-nav uk-nav-side" data-uk-switcher="{connect:'#{{genRandom}}'}">
+                        {{#each secondary}}
+                            <li class="uk-active"><a href="#">{{title}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="uk-width-3-4">
+                    <ul id="{{getRandom}}" class="uk-switcher">
+                        {{#each secondary}}
+                        <li>
+                            <div>
+                                <div>
+                                    {{#each quickLinks}}
+                                            <a class="uk-margin-right uk-display-inline-block" href="{{pathFor link}}">
+                                                <h3 class="vfi-red uk-text-bold vfi-quicklink">{{title}}
+                                                </h3>
+                                            </a>
+                                    {{/each}}
+                                </div>
+
+                                <div class="uk-grid border-top uk-margin-small-top">
+                                    {{#each tertiary}}
+                                    <div class="uk-width-1-3 uk-margin-top">
+                                        <strong>{{title}}</strong>
+                                        <ul>
+                                            {{#each items}}
+                                            <li><a href="#">{{title}}</a></li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/if}} <!--secondary -->
+    </li>
+</template>
+
+
+
+
+<template name="vfiNavMyVodafone">
+    <li class="uk-parent" data-uk-dropdown="{justify:'body', remaintime: 200}">
+        <a class="vfi-nav-primary" href="">MY VODAFONE</a>
+        {{#with user}}
+        <div class="vfi-mega-menu uk-dropdown">
+            <div class="uk-grid uk-margin-small-left uk-margin-small-right">
+                <div class="uk-width-3-4">
+                    <ul id="vfi-nav-myVodafone" class="uk-switcher">
+                        <li id="">
+                            <h2>Welcome back {{profile.name}}</h2>
+                        </li>
+                        <li>
+                            <h2>paheheheh</h2>
+                        </li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4">
+                    <ul class="uk-tab uk-tab-right" data-uk-tab="{connect:'#vfi-nav-myVodafone'}">
+                        <li class="uk-active"><a href="#">Account</a></li>
+                        <li><a href="#">Rewards</a></li>
+                        <li><a href="#">My Care</a></li>
+                        <li><a id="btn_logOut">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </li>
+</template>

@@ -1,0 +1,14 @@
+<template name="superGuage">
+    <div class="uk-grid" data-uk-grid-match>
+        {{#each this}}
+            {{>credits}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="credits">
+    <div class="uk-width-1-2 uk-width-medium-1-4 vfi-guage uk-panel uk-margin-bottom">
+        <h3 class="uk-panel-title">{{title}}</h3>
+        <div class="superGuage"></div>
+    </div>
+</template>

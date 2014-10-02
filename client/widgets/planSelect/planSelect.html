@@ -1,0 +1,64 @@
+<template name="planSelect">
+    <div class="plan-wrapper">
+        <div class="uk-width-1-1 plan">
+
+            <ul id="my-id" class="uk-switcher">
+                {{#each this}}
+                <li data-uk-scrollspy="{cls:'uk-animation-scale-down'}" data-uk-observe>
+                    <div class="uk-panel uk-panel-box uk-panel-box-primary">
+
+                        <h2 class="uk-text-center uk-margin-bottom">{{group}}</h2>
+                        <div class="uk-text-center uk-margin-bottom">
+                            <ul id="plan-wrapper-selectButtons" data-uk-switcher="{connect:'#{{_id._str}}'}" class="uk-button-group">
+                                {{#each plan}}
+                                <li>
+                                    <button class="uk-button vfi-round vfi-callAction btn-plan">{{title}}</button>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+
+                        <p class="uk-text-center uk-text-bold uk-margin-top uk-margin-bottom">Features</p>
+
+                        <ul id="{{_id._str}}" class="uk-switcher">
+                            {{#each plan}}
+                            <li class="uk-text-center">
+
+                                <div id="vfi-guages-group" class="uk-container uk-container-center">
+                                    {{>superGuage credits}}
+                                </div>
+
+                                {{#each features}}
+                                <p>{{feature}}</p>
+                                {{/each}}
+
+                                <a>More about this plan, terms & conditions</a>
+                                <div class="uk-width-1-1 uk-margin-large-top uk-margin-left uk-margin-large-right">
+                                    <div class="uk-grid">
+                                        <div class="uk-width-medium-1-4">
+                                            <h3>On this plan you pay for</h3>
+                                        </div>
+                                        <div class="uk-width-medium-1-4">
+                                            <h4>Phone: <span><h3>{{costPhone}}</h3></span></h4>
+                                        </div>
+                                        <div class="uk-width-medium-1-4">
+                                            <h4>Bill pay plan per month <span><h3>{{costMonth}}</h3></span></h4>
+                                        </div>
+                                        <div class="uk-width-medium-1-4">
+                                            <button class="uk-button vfi-round vfi-button-blue">CONTINUE</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+                {{/each}}
+                <li></li>
+
+            </ul>
+        </div>
+    </div>
+</template>

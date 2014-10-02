@@ -1,0 +1,10 @@
+{
+    "name": "uikit-full",
+    "description": "A lightweight and modular front-end framework.",
+    "homepage": "https://github.com/payner35/meteor-uikit-full",
+    "author": "Gavin Payne <@gavin_payne>",
+    "version": "1.0.0",
+    "git": "https://github.com/payner35/meteor-uikit-full.git",
+    "packages": {
+    }
+}

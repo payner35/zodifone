@@ -1,0 +1,40 @@
+<template name="compareDevices">
+    <div id="compareDevices" class="uk-width-1-1">
+        <div class="uk-grid" data-uk-grid-match>
+            <!--
+            <div id="compareText" class="uk-panel uk-panel-box uk-width-1-5">
+                <h3>Compare up to three phones</h3>
+            </div>
+            -->
+            <div class="uk-grid uk-width-5-6">
+                {{#each compareMe}}
+                {{#with data}}
+                <div class="uk-panel uk-panel-box uk-width-1-3 uk-panel-header uk-margin-top-remove">
+                    <h3 class="uk-panel-title uk-text-center">{{title}}</h3>
+                    <img class="uk-width-1-4 uk-align-center" src="{{image}}">
+                    <table class="uk-table uk-table-condensed">
+                        {{#each rating}}
+                        <div class="uk-width-1-1">
+                            <p><span class="vfi-bold">{{score}}</span> {{title}}</p>
+                        </div>
+                        <div class="uk-progress uk-progress-mini">
+                            <div class="uk-progress-bar" style="width: {{percentage}}"></div>
+                        </div>
+                       {{/each}}
+                        <button id="btn_compareMore" class="uk-button vfi-round vfi-button-blue uk-align-center uk-margin-bottom">More</button>
+                    </table>
+                </div>
+                {{/with}}
+                {{/each}}
+            </div>
+            <div id="comparePanel" class="uk-panel uk-width-1-6">
+                <button id="btn_compareDevices" class="uk-button vfi-round vfi-button-blue uk-position-absolute">COMPARE</button>
+                <button id="btn_compareClose" class="uk-button vfi-round vfi-button-blue uk-position-absolute">X</button>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="compareTable">
+
+</template>

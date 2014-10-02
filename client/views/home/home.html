@@ -1,0 +1,65 @@
+<template name="home">
+
+    {{> contentFor region="leftNav" template="leftNav"}}
+    {{> contentFor region="rightNav" template="deviceHelp"}}
+
+
+    <div id="home">
+        {{>mainCarousel}}
+
+        <div class="uk-width-1-1 uk-hidden-small">
+            {{>helpBar}}
+        </div>
+
+
+
+        <div class="uk-grid data-uk-grid-match uk-grid-small">
+            <div class="uk-width-medium-1-2 uk-width-small-1-1 uk-margin-small-bottom">
+                <div class="uk-panel uk-panel-box uk-panel-box-primary">
+                    <h2 class="uk-panel-title">Phones</h2>
+                </div>
+            </div>
+            <div class="uk-width-medium-1-2 uk-width-small-1-1">
+                <div class="uk-grid data-uk-grid-match uk-grid-small">
+                    <div class="uk-width-medium-1-2 uk-width-small-1-1 uk-margin-small-bottom">
+                        <div class="uk-panel uk-panel-box uk-panel-box-primary">
+                            <h2 class="uk-panel-title">Plans</h2>
+                        </div>
+                    </div>
+                    <div class="uk-width-medium-1-2 uk-width-small-1-1">
+                        <div class="uk-panel uk-panel-box uk-panel-box-primary">
+                            <h2 class="uk-panel-title">Broadband</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-grid data-uk-grid-match uk-grid-small">
+            <div class="uk-width-medium-1-2 uk-width-small-1-1 uk-margin-small-bottom">
+                <div class="uk-panel uk-panel-box uk-panel-box-primary">
+                    <h2 class="uk-panel-title">Upgrade</h2>
+                </div>
+            </div>
+            <div class="uk-width-medium-1-2 uk-width-small-1-1">
+                <div class="uk-panel uk-panel-box uk-panel-box-primary">
+                    <h2 class="uk-panel-title">Switch</h2>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="uk-grid uk-grid-small">
+            <div class="uk-width-1-1">
+                {{>products}}
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        {{> footer}}
+    </footer>
+</template>
+

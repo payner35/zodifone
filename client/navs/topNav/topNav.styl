@@ -1,0 +1,109 @@
+@import nib
+
+
+//variables..
+
+vodafoneRed = #ff0000
+navFontColor = black
+navColor = #f6f6f6
+
+
+
+#topNav
+	position relative //to get z-index to work ;)
+	z-index: 200
+
+
+#topNavBar
+	@media (max-width: 660px)
+		border-bottom 3px solid #d3d3d3
+
+	.uk-icon-home
+		padding-top 15px
+
+	height 60px
+	background: navColor
+	.uk-navbar-brand
+		padding 13px 13px 0 5px
+
+	.vfi-nav-primary
+		cursor
+		font-family VodafoneRg_Bd
+		padding-top 10px
+		height 60px
+		color navFontColor
+		border-right:1px solid #d2d2d2
+		&:hover
+			background: #C9DFCF
+			//select the initial nav option
+
+
+	.uk-open > .vfi-nav-primary
+		background: vodafoneRed
+		color white
+
+
+
+	.vfi-mega-menu
+		margin-top 0px
+		background: white
+		border-bottom 3px solid vodafoneRed
+		border-top 3px solid vodafoneRed
+
+		.uk-tab-responsive
+			visibility hidden
+			height 0px
+
+		strong
+			font-family Arial, "Helvetica Neue", Helvetica, sans-serif
+
+		.uk-nav-side
+			background-color white
+			>li
+				background-color white
+				a
+					font-family Arial, "Helvetica Neue", Helvetica, sans-serif
+					padding 20px 0px 20px 20px
+
+				&.uk-active
+					a
+						background #f5f5f5
+						color black
+
+		.uk-grid
+			padding-left 10px
+			padding-right 0px
+
+			.uk-width-3-4
+				padding-top 10px
+				padding-bottom 10px
+				background-color #f5f5f5
+				a
+					font-family Arial, "Helvetica Neue", Helvetica, sans-serif
+					color black
+					font-size 80%
+
+			.vfi-quicklink
+				margin-top 4px
+				margin-bottom 3px
+
+
+
+	#vfi-mainNav
+		padding-left 20px
+
+
+	.uk-navbar-toggle
+		color vodafoneRed
+		padding-top 20px
+
+	#icon-vfiHelp
+		margin 19px 10px
+		cursor pointer
+
+	.uk-icon-shopping-cart
+		margin 12px 12px 0px 3px
+		background vodafoneRed*.8
+		color #ffffff
+
+
