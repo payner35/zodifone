@@ -1,13 +1,12 @@
 <template name="leftNav">
-    <!-- This is the off-canvas sidebar -->
-    <div class="uk-offcanvas-bar">
-        <nav id="leftMenu">
+    <nav id="leftNav">
             {{#with nav}}
+            {{#if primary}}
             <ul>
-                {{#if primary}}
+                <li><a class="vfi_btnNav" data-link="home">HOME</a></li>
                 {{#each primary}}
                 <li>
-                    <a href="#" class="vfi-btnNav" data-link="{{link}}">{{title}}</a>
+                    <a class="vfi_btnNav" data-link="{{link}}">{{title}}</a>
                     {{#if secondary}}
                     <ul>
                         {{#each secondary}}
@@ -19,11 +18,9 @@
                                 <li>
                                     <a>{{title}}</a>
                                     <ul>
-
                                       {{#each items}}
                                             <li><a href="#">{{title}}</a></li>
                                       {{/each}}
-
                                     </ul>
                                 </li>
                                 {{/each}}
@@ -35,69 +32,9 @@
                     {{/if}}
                 </li>
                 {{/each}}
-                {{/if}}
              </ul>
+            {{/if}}
             {{/with}}
-            <!--
-            <ul>
-                <li>
-                    <a>MOBILE</a>
-                    <ul>
-                        <li>
-                            <a id="btn_LNgotoDevices">Phones</a>
-                            <ul>
-                                <li><a href="#">Apple</a></li>
-                                <li><a href="#">Blackberry</a></li>
-                                <li><a href="#">HTC</a></li>
-                                <li><a href="#">LG</a></li>
-                                <li><a href="#">Nokia</a></li>
-                                <li><a href="#">Samsung</a></li>
-                                <li><a href="#">Sony</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Plans</a>
-                            <ul>
-                                <li><a href="#">Apple</a></li>
-                                <li><a href="#">Blackberry</a></li>
-                                <li><a href="#">HTC</a></li>
-                                <li><a href="#">LG</a></li>
-                                <li><a href="#">Nokia</a></li>
-                                <li><a href="#">Samsung</a></li>
-                                <li><a href="#">Sony</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Tablet & Devices</a>
-                            <ul>
-                                <li><a href="#">Apple</a></li>
-                                <li><a href="#">Blackberry</a></li>
-                                <li><a href="#">HTC</a></li>
-                                <li><a href="#">LG</a></li>
-                                <li><a href="#">Nokia</a></li>
-                                <li><a href="#">Samsung</a></li>
-                                <li><a href="#">Sony</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Other</a>
-                            <ul>
-                                <li><a href="#">Apple</a></li>
-                                <li><a href="#">Blackberry</a></li>
-                                <li><a href="#">HTC</a></li>
-                                <li><a href="#">LG</a></li>
-                                <li><a href="#">Nokia</a></li>
-                                <li><a href="#">Samsung</a></li>
-                                <li><a href="#">Sony</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
-            -->
-        </nav>
-    </div>
+    </nav>
 </template>
-
 

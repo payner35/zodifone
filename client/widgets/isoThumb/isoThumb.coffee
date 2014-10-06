@@ -1,6 +1,6 @@
 _.extend Template.productItem,
 	events:
-		'click .productItem': (evt) ->
+		'click .productClickMe': (evt) ->
 			Router.go 'productView', {_id: @._id}
 			return
 

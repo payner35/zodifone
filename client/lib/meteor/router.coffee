@@ -3,7 +3,8 @@ if Meteor.isClient
 
 	#set up subscriptions form the server..
 	@Subscriptions =  #make gloabal var with the '@'... its now accesable in any controller
-		navigation: Meteor.subscribe "navigation"
+		#navigation: Meteor.subscribe "navigation"
+		help: Meteor.subscribe "help"
 
 	Router.configure
 		notFoundTemplate: '404'
@@ -27,10 +28,10 @@ if Meteor.isClient
 
 	Router.onBeforeAction ->
 		$('body').scrollTop 0  #scroll to the top of the page on route
-		jQuery.UIkit.offcanvas.hide() #close any nav if opened
+		$.UIkit.offcanvas.hide([force = false])
 
 		#remove any open mega menu..
-		$(".vfi-nav-parent").removeClass('uk-open')
+		#$(".vfi-nav-parent").removeClass('uk-open')
 		return
 
 

@@ -1,7 +1,7 @@
 _.extend Template.topNav,
 	events:
-		'click #gav': ->
-			$("#leftMenu").trigger( "open.mm" )
+		'click #btn_openLeftNav': ->
+			$("#leftNav").trigger( "open.mm" )
 			return
 
 	userPic: ->

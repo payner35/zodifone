@@ -8,7 +8,8 @@ class @productViewController extends RouteController
 		return [
 			this.subscribe('someItem', this.params._id).wait(),
 			this.subscribe('plans').wait(),
-			this.subscribe('navhelp', this.params._id).wait()
+			this.subscribe('navhelp', this.params._id).wait(),
+			this.subscribe('navigation').wait()
 		]
 	data: ->
 		return {

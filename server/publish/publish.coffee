@@ -38,3 +38,6 @@ Meteor.publish "navhelp",(deviceID) ->
 
 Meteor.publish "navigation", ->
 	return Navigation.find(title: "mainNav")
+
+Meteor.publish "help", ->
+	return Help.find()

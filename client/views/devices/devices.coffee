@@ -7,7 +7,8 @@ class @devicesController extends RouteController
 	waitOn: ->
 		return [
 			this.subscribe('items').wait(),
-			this.subscribe('navhelp', "devices").wait()
+			this.subscribe('navhelp', "devices").wait(),
+			this.subscribe('navigation').wait()
 		]
 	data: ->
 		return {

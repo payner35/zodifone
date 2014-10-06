@@ -11,7 +11,7 @@ Package.onUse(function(api) {
   var asset_path = path.join('mmenu');
 
   //js
-  api.add_files(path.join(asset_path, 'js', 'jquery.mmenu.js'), 'client');
+  api.add_files(path.join(asset_path, 'js', 'jquery.mmenu.min.js'), 'client');
   api.add_files(path.join(asset_path, 'js', 'jquery.mmenu.header.js'), 'client');
 
 

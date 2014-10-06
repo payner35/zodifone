@@ -7,7 +7,8 @@ class @homeController extends RouteController
 	waitOn: ->
 		return [
 			this.subscribe('items').wait(),
-			this.subscribe('navhelp', "home").wait()
+			this.subscribe('navhelp', "home").wait(),
+			this.subscribe('navigation').wait()
 		]
 	data: ->
 		return {
@@ -15,6 +16,10 @@ class @homeController extends RouteController
 			navhelp: Navhelp.findOne(deviceId: "home"),
 			nav: Navigation.findOne(title: "mainNav")
 		} #all events gets sent to the template.
+	onBeforeAction: ->
+		#destroy any cirrent menu items..
+
+		return
 
 
 
@@ -23,16 +28,8 @@ class @homeController extends RouteController
 #template..........................
 _.extend Template.home,
 
-
-
-
 	rendered: ->
 		#called when the dom is rendered..
 		console.log "home is rendered"
-
-
-
-
-
 
 		return

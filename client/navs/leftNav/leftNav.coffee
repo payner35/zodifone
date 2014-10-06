@@ -1,24 +1,23 @@
+
 _.extend Template.leftNav,
 	events:
 		'click #btn_LNgotoDevices': ->
 			console.log "sdfsdsfs"
 			Router.go "devices"
 			return
+
 		'click #btn_viewPortfolio': (evt) ->
 			Router.go "portfolio"
-			return
-
-		'click .gavin': (evt) ->
-			console.log "fjdhfdskhf"
 			return
 
 		'click #btn_logOut': (evt)->
 			Meteor.logout() #the router security will automatically go to the home view.
 			return
 
+
 	rendered: ->
 
-		$("#leftMenu").mmenu
+		$("#leftNav").mmenu
 			classes: "mm-white"
 			onClick:
 				preventDefault: true
@@ -26,30 +25,22 @@ _.extend Template.leftNav,
 				title: "Vodafone"
 				add: true
 				update: true
-		,
-			classNames:
-				selected: "uk-active"
 
 
-		$("#leftMenu").on "closing.mm", (evt)->
-			#remove the mmenu stuff form the body.. ;)
-			$('body').removeClass('uk-offcanvas-page')
-			$('body').removeAttr("style")
-
+		$(".vfi_btnNav").on "click", (evt) ->
 			#get the route name from the div..
-			el = $(evt.target).find('.mm-selected').find('.vfi-btnNav')
+			el = $(evt.target)
 			route = el.data().link
-			Router.go route
+			newPath = "/"+route
+			#console.log Router.current().path + " " + newPath
+			if Router.current().path != newPath
+				Meteor.setTimeout ->
+					#slight delay to let the nav close...
+					Router.go route
+				, 200
+
 			return
+
 
 		return
 
-
-
-
-_.extend UI,
-	events:
-		'click .btn_Nav': (evt) ->
-			console.log @
-			console.log evt.target
-			return
