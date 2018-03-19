@@ -1,4 +1,4 @@
-vodafone
+Zodifone
 ========
 
-vodafone demo
+VF HW demo
